@@ -6,6 +6,7 @@
     }
 
     private stage: createjs.Stage;
+    private gameEntities: { [entityId: string]: GameEntity; } = {};
 
     constructor() {
         Application.instance = this;
@@ -19,8 +20,24 @@
         this.stage.autoClear = true;
         createjs.Ticker.setFPS(60);
         var tick_bind = this.tick.bind(this);
-        createjs.Ticker.addEventListener("tick", tick_bind); 
+        createjs.Ticker.addEventListener("tick", tick_bind);
+    }
 
+    public updateEntity(entity: GameEntity): void {
+        if (typeof this.gameEntities[entity.entityId] !== 'undefined') {
+            // Update properties
+            for (var prop in entity) {
+                this.gameEntities[entity.entityId][prop] = entity[prop];
+            }
+        } else {
+            // Instantiate new object and update properties
+            var newEntity = new window[entity.entityName]();
+            for (var prop in entity) {
+                newEntity[prop] = entity[prop];
+            }
+            this.gameEntities[entity.entityId] = newEntity;
+            this.stage.addChild(newEntity);
+        }
     }
 
     public tick(): void {

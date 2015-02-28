@@ -11,6 +11,7 @@ interface HubProxy {
 
 interface IMissileHubClient {
     sayHello(str: string);
+    updateGameEntities(entities: Array<GameEntity>);
 }
 
 interface IMissileHubServer {
@@ -37,12 +38,19 @@ class HubController {
     public init(): void {
         // Link all proxy methods
         this.hubClient.sayHello = this.sayHello;
+        this.hubClient.updateGameEntities = this.updateGameEntities;
 
         // Start the SignalR connection
         this.connection.hub.start()
     }
 
     public sayHello(str: string) {
-        alert("Server says: " + str);
+        console.log("Server says: '" + str + "'");
+    }
+
+    public updateGameEntities(entities: Array<GameEntity>) {
+        for (var i = 0; i < entities.length; i++) {
+            Application.instance.updateEntity(entities[i]);
+        }
     }
 }
