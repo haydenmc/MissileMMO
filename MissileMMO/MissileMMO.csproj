@@ -88,7 +88,6 @@
     <Content Include="Assets\Images\phaser-logo-small.png" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Scripts\typescript.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
