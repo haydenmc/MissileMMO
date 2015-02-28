@@ -2,13 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>MissileMMO</title>
-    <script src="Scripts/phaser.min.js"></script>
+    <script src="Scripts/createjs-2014.12.12.min.js"></script>
     <script src="Scripts/jquery-1.10.2.min.js"></script>
     <script src="Scripts/jquery.signalR-2.1.2.min.js"></script>
     <script src="signalr/hubs"></script>
     <script src="Scripts/typescript.js"></script>
+    <style>
+        body {
+            background-color: #000;
+            text-align: center;
+        }
+        canvas {
+            background-color: #000;
+            border: 4px solid #fff;
+        }
+    </style>
 </head>
 <body>
-    <div id="content"></div>
+    <canvas id="game" width="1024" height="768"></canvas>
 </body>
 </html>

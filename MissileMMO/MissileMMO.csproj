@@ -87,6 +87,7 @@
   <ItemGroup>
     <Content Include="Assets\Images\phaser-logo-small.png" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\createjs-2014.12.12.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Scripts\typescript.js.map" />
     <None Include="Web.Debug.config">
@@ -103,7 +104,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery.signalR-2.1.2.js" />
     <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
-    <Content Include="Scripts\phaser.min.js" />
     <Content Include="Scripts\typescript.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -116,10 +116,17 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\Typescript\Application.ts" />
     <TypeScriptCompile Include="Scripts\Typescript\MissileHub.ts" />
+    <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\createjs\createjs.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\easeljs\easeljs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\phaser\phaser.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\phaser\pixi.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\preloadjs\preloadjs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\signalr\signalr.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\soundjs\soundjs.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\tweenjs\tweenjs.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\webaudioapi\waa.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\webrtc\MediaStream.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\webrtc\RTCPeerConnection.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

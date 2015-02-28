@@ -5,7 +5,7 @@
         return this._hub;
     }
 
-    public game: Phaser.Game;
+    private stage: createjs.Stage;
 
     constructor() {
         Application.instance = this;
@@ -15,16 +15,16 @@
         this._hub = new HubController();
         this._hub.init();
 
-        this.game = new Phaser.Game(800, 600, Phaser.AUTO, 'content', { preload: this.preload, create: this.create });
+        this.stage = new createjs.Stage(document.getElementById("game"));
+        this.stage.autoClear = true;
+        createjs.Ticker.setFPS(60);
+        var tick_bind = this.tick.bind(this);
+        createjs.Ticker.addEventListener("tick", tick_bind); 
+
     }
 
-    public preload() {
-        this.game.load.image('logo', '/Assets/Images/phaser-logo-small.png');
-    }
-
-    public create() {
-        var logo = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'logo');
-        logo.anchor.setTo(0.5, 0.5);
+    public tick(): void {
+        this.stage.update();
     }
 }
 
